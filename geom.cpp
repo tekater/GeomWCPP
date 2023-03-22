@@ -1,15 +1,19 @@
 #include <iostream>
+#include <stdlib.h>  // rand(), srand()
+#include <windows.h> // time()
+#include <math.h>    // библиотека матеши
+#include <time.h>
 using namespace std;
 
 int main()
 {
 	setlocale(0, "");
-	srand(time(NULL));
+	//srand(time(NULL));
 	int length = 16;
 	string input;
 	cout << "Введите букву\nA B C D E F G H I J\na b c d e f g h i j\n";
 	cin >> input;
-	int num;
+	int num = 0;
 	if (input == "A" || input == "a") {
 		num = 1;
 	}
@@ -143,24 +147,72 @@ int main()
 		break;
 	case 7:
 		system("cls");
+		cout << "G\n";
+		for (int i = 0; i <= length; i++)
+		{
+			for (int j = 0; j <= length; j++)
+			{
+				if (i >= j && i + j >= length || i <= j) {
+					cout << " ";
+				}
+				else {
+					cout << "*";
+				}
+			}
+			cout << endl;
+		}
 
 		break;
 	case 8:
 		system("cls");
-
+		cout << "H\n";
+		for (int i = 0; i <= length; i++)
+		{
+			for (int j = 0; j <= length; j++)
+			{
+				if (i <= j && i + j <= length || i >= j) {
+					cout << " ";
+				}
+				else {
+					cout << "*";
+				}
+			}
+			cout << endl;
+		}
 		break;
 	case 9:
 		system("cls");
-
+		cout << "I\n";
+		for (int i = 0; i <= length; i++)
+		{
+			for (int j = 0; j <= length; j++)
+			{
+				if (i + j >= length) {
+					cout << " ";
+				}
+				else {
+					cout << "*";
+				}
+			}
+			cout << endl;
+		}
 		break;
 	case 10:
 		system("cls");
-
+		cout << "J\n";
+		for (int i = 0; i <= length; i++)
+		{
+			for (int j = 0; j <= length; j++)
+			{
+				if (i + j <= length) {
+					cout << " ";
+				}
+				else {
+					cout << "*";
+				}
+			}
+			cout << endl;
+		}
 		break;
 	}
-	cout << "G\n";
-	cout << "H\n";
-	cout << "I\n";
-	cout << "J\n";
-
 }
